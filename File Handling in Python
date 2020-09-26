@@ -1,0 +1,68 @@
+# -*- coding: utf-8 -*-
+"""
+@author: kiranavhad87
+"""
+import csv
+fobj = open("numbers.txt","a")
+
+for val in range(1,101):
+    fobj.write(str(val) + "\n")
+    
+fobj = open("numbers.txt","a")
+fobj.write("kiran avhaad ")
+fobj.close()
+
+
+# any line starts with the keyword is called as context manager
+#advantage File will be close atomatically when it is out of indantation
+# Use Netowkprogramming or database programing
+
+with open("numbers2.txt","a") as fobj1:
+    for val in range(1,10):
+        fobj1.write(str(val)+"\n")
+        
+        
+filename = input("enter filename")
+print("You enteredd " , filename)
+
+
+with open(filename,"w") as fobj2:
+    for val in range(1,11):
+        fobj2.write("KIran")
+
+
+#--------------------------------------------------------------------
+        
+with open("numbers.txt","r") as fobj3:
+    for line in fobj3:
+        line = line.strip()
+        print(line)
+       
+#-------------------------------------------------------------------
+with open("numbers.txt","r") as fobj4:
+    print(fobj4.read())
+ # this read() function will read complete file at a time not line by line
+
+# 3 : using readlines()
+with open("numbers.txt","r") as fobj5:
+    print(fobj5.readlines() [20])
+ #-----------------------------------------------------------------
+# csv file is converted to the list per line
+with open("fee.csv","r") as fobj6:
+    reader = csv.reader("fee.csv")
+    print(fobj6.readlines())
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
